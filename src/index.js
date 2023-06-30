@@ -52,14 +52,22 @@ function markUp(arr) {
   let imgUrl = arr.map(link => link.url);
   let catDesc = arr.map(link => link.breeds[0].description);
   let catTemp = arr.map(link => link.breeds[0].temperament);
+  let catName = arr.map(link => link.breeds[0].name);
 
   const markUp = `
-      
+      <table>
+      <tr>
+      <td>
       <img class="img-cat" src="${imgUrl}" width="440" height="400" loading="lazy">
-      <div class="intro">
+      </td>
+      <td class="text-cell">
+      <div class="text-desc">
+      <h1 class="cat-title">${catName}</h1>
         <p class="cat-info"><b>Description: </b>${catDesc}</p>
         <p class="cat-info"><b>Temperament: </b>${catTemp}</p>
       </div>
+      </td>
+      </table>
     `;
 
   catContainer.insertAdjacentHTML('beforeend', markUp);

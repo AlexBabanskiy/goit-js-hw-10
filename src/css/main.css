@@ -1,0 +1,25 @@
+.img-cat {
+  display: block;
+  border-radius: 5%;
+  box-shadow: 0px -0px 4px 0px rgba(203, 205, 149, 0.47);
+}
+.cat-title {
+  padding: 20px 0 0 20px;
+  margin: 0;
+}
+
+.cat-info {
+  color: black;
+  font-size: 16px;
+  padding: 20px 0 0 20px;
+  margin: 0;
+}
+
+.text-desc {
+  text-align: left;
+}
+
+.text-cell {
+  max-width: 400px;
+  vertical-align: top;
+}
