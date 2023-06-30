@@ -4,28 +4,16 @@ import SlimSelect from 'slim-select';
 axios.defaults.headers.common['x-api-key'] =
   'live_6oipNaEf4MhA3t1QKH9rU8tuRomBydjiP5ZsBkmsecdwgBpHv8VKGluJCVsYRtAH';
 
-import { fetchBreeds } from './js/cat-api';
-import { fetchCatByBreed } from './js/cat-api';
-
 fetchBreeds();
 
-import { loader } from './js/cat-api';
+import { loader, fetchCatByBreed, fetchBreeds } from './js/cat-api';
 
-window.onload = function () {
-  loader.style.display = 'none';
-};
+// window.onload = function () {
+//   loader.style.display = 'none';
+// };
 
-// export const loader = document.querySelector('.loader');
-
-// const errorMsg = document.querySelector('.error');
-// const BASE_URL = 'https://api.thecatapi.com/v1/';
-// const API_KEY =
-//   'live_6oipNaEf4MhA3t1QKH9rU8tuRomBydjiP5ZsBkmsecdwgBpHv8VKGluJCVsYRtAH';
-
-// const breedSelect = document.querySelector('.breed-select');
 import { breedSelect } from './js/cat-api';
 const catContainer = document.querySelector('.cat-info');
-const closeButton = document.querySelector('.close-btn');
 
 breedSelect.addEventListener('change', onSelectView);
 
@@ -89,8 +77,6 @@ function clearCatContainer() {
   const children = Array.from(catContainer.children);
 
   children.forEach(child => {
-    if (child !== closeButton) {
-      catContainer.removeChild(child);
-    }
+    catContainer.removeChild(child);
   });
 }
