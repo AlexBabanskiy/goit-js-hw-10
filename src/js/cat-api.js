@@ -6,9 +6,7 @@ const errorMsg = document.querySelector('.error');
 const BASE_URL = 'https://api.thecatapi.com/v1/';
 const API_KEY =
   'live_6oipNaEf4MhA3t1QKH9rU8tuRomBydjiP5ZsBkmsecdwgBpHv8VKGluJCVsYRtAH';
-const backdrop = document.querySelector('#backdrop');
-const catModal = document.querySelector('#cat-modal-content');
-const closeButton = document.querySelector('#close-button');
+const breedSelect = document.querySelector('.breed-select');
 
 export function fetchBreeds() {
   loader.style.display = 'block';
@@ -31,7 +29,6 @@ export function fetchBreeds() {
       loader.style.display = 'none';
     });
 }
-const breedSelect = document.querySelector('.breed-select');
 
 function createAllOptions(arr) {
   for (let i = 0; i < arr.length; i += 1) {
@@ -49,3 +46,5 @@ export function fetchCatByBreed(breedId) {
     `https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}&api_key=${API_KEY}`
   ).then(response => response.json());
 }
+
+export { breedSelect };
